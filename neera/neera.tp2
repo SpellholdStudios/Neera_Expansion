@@ -1,0 +1,114 @@
+// --------------------------------------------
+// Mod setup
+// --------------------------------------------
+// Basics
+BACKUP ~neera/backup~
+AUTHOR ~K'aeloree (kae@spellholdstudios.net)~
+VERSION ~v1.1~
+README ~neera/neera_readme.html~
+//MODDER
+
+// --------------------------------------------
+// Neera Expansion
+// --------------------------------------------
+// Component setup
+BEGIN ~Neera Expansion~
+GROUP ~Neera Expansion content~
+  REQUIRE_PREDICATE GAME_IS ~bgee~ ~You must have Baldur's Gate: Enhanced Edition installed.~
+
+// Appending gtimes.ids to include the timer
+APPEND ~gtimes.ids~ ~5400 LK#NEERA_TIMER~
+UNLESS ~LK#NEERA_TIMER~
+
+// Compile dialogues
+COMPILE ~neera/dialogue/neeraj.d~
+COMPILE ~neera/dialogue/flirts.d~
+
+// Compile scripts
+EXTEND_BOTTOM ~neera.bcs~  ~neera/scripts/neera.baf~
+EXTEND_BOTTOM ~neerad.bcs~ ~neera/scripts/neerad.baf~
+
+
+
+BEGIN ~15 minutes~
+REQUIRE_COMPONENT ~neera.tp2~ ~0~ ~You need the Neera Expansion installed!~
+SUBCOMPONENT ~How much time would you like between talks (approximately)?~
+GROUP ~Neera Expansion content~
+
+COPY_EXISTING ~gtimes.ids~ ~gtimes.ids~
+  REPLACE_TEXTUALLY ~5400 LK#NEERA_TIMER~ ~900 LK#NEERA_TIMER~
+
+
+BEGIN ~30 minutes~
+REQUIRE_COMPONENT ~neera.tp2~ ~0~ ~You need the Neera Expansion installed!~
+SUBCOMPONENT ~How much time would you like between talks (approximately)?~
+GROUP ~Neera Expansion content~
+
+COPY_EXISTING ~gtimes.ids~ ~gtimes.ids~
+  REPLACE_TEXTUALLY ~5400 LK#NEERA_TIMER~ ~1800 LK#NEERA_TIMER~
+
+
+BEGIN ~1 hour~
+REQUIRE_COMPONENT ~neera.tp2~ ~0~ ~You need the Neera Expansion installed!~
+SUBCOMPONENT ~How much time would you like between talks (approximately)?~
+GROUP ~Neera Expansion content~
+
+COPY_EXISTING ~gtimes.ids~ ~gtimes.ids~
+  REPLACE_TEXTUALLY ~5400 LK#NEERA_TIMER~ ~3600 LK#NEERA_TIMER~
+  
+
+BEGIN ~1.5 hours (default)~
+REQUIRE_COMPONENT ~neera.tp2~ ~0~ ~You need the Neera Expansion installed!~
+SUBCOMPONENT ~How much time would you like between talks (approximately)?~
+GROUP ~Neera Expansion content~
+
+
+BEGIN ~2 hours~
+REQUIRE_COMPONENT ~neera.tp2~ ~0~ ~You need the Neera Expansion installed!~
+SUBCOMPONENT ~How much time would you like between talks (approximately)?~
+GROUP ~Neera Expansion content~
+
+COPY_EXISTING ~gtimes.ids~ ~gtimes.ids~
+  REPLACE_TEXTUALLY ~5400 LK#NEERA_TIMER~ ~7200 LK#NEERA_TIMER~
+  
+
+// Make Neera female-romanceable
+BEGIN ~Make Neera romanceable by women?~
+GROUP ~Game romance tweaks~
+
+COPY_EXISTING ~neera.bcs~ ~override~
+  DECOMPILE_BCS_TO_BAF
+    REPLACE_TEXTUALLY ~Gender(Player1,MALE)~
+    ~~
+  COMPILE_BAF_TO_BCS
+BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~neeraj.dlg~ ~override~
+  DECOMPILE_DLG_TO_D
+    REPLACE_TEXTUALLY ~I'm a man of the world~
+    ~I'm a traveler of the world~
+    REPLACE_TEXTUALLY ~mister adventurer sir~
+    ~my good adventurer~
+  COMPILE_D_TO_DLG
+BUT_ONLY_IF_IT_CHANGES
+
+COMPILE ~neera/dialogue/neera_romance.d~
+
+
+// Make Rasaad male-romanceable
+BEGIN ~Make Rasaad romanceable by men?~
+GROUP ~Game romance tweaks~
+
+COPY_EXISTING ~rasaad.bcs~ ~override~
+  DECOMPILE_BCS_TO_BAF
+    REPLACE_TEXTUALLY ~Gender(Player1,FEMALE)~
+    ~~
+  COMPILE_BAF_TO_BCS
+BUT_ONLY_IF_IT_CHANGES
+
+COPY_EXISTING ~rasaadj.dlg~ ~override~
+  DECOMPILE_DLG_TO_D
+    REPLACE_TEXTUALLY ~radiantly beautiful~
+    ~incredibly good-looking~
+  COMPILE_D_TO_DLG
+BUT_ONLY_IF_IT_CHANGES

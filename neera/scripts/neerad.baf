@@ -1,0 +1,55 @@
+// Neera dream
+
+// talk 2 in inn on rest
+IF
+    InParty(Myself)
+    See(Player1)
+    IsValidForPartyDialogue(Myself)
+    IsValidForPartyDialogue(Player1)
+    RealGlobalTimerExpired("LK#NeeraTalksTimer","GLOBAL")
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("LK#NeeraTalks","GLOBAL",3)
+    OR(21)
+      AreaCheck("AR3351")
+      AreaCheck("AR3304")
+      AreaCheck("AR3357")
+      AreaCheck("AR3307")
+      AreaCheck("AR4801")
+      AreaCheck("AR0154")
+      AreaCheck("AR0705")
+      AreaCheck("AR0807")
+      AreaCheck("AR1306")
+      AreaCheck("AR0105")
+      AreaCheck("AR1215")
+      AreaCheck("AR1109")
+      AreaCheck("AR1113")
+      AreaCheck("AR0116")
+      AreaCheck("AR0165")
+      AreaCheck("AR0119")
+      AreaCheck("AR0114")
+      AreaCheck("AR0104")
+      AreaCheck("AR2301")
+      AreaCheck("AR0103")
+      AreaCheck("AR1001")
+THEN
+  RESPONSE #100
+    SetGlobal("LK#NeeraTalks","GLOBAL",4)
+    Dialogue(Player1)
+END
+
+// talk 5 on rest
+IF
+    InParty(Myself)
+    See(Player1)
+    IsValidForPartyDialogue(Myself)
+    IsValidForPartyDialogue(Player1)
+    RealGlobalTimerExpired("LK#NeeraTalksTimer","GLOBAL")
+    CombatCounter(0)
+    !See([ENEMY])
+    Global("LK#NeeraTalks","GLOBAL",9)
+THEN
+  RESPONSE #100
+    SetGlobal("LK#NeeraTalks","GLOBAL",10)
+    Dialogue(Player1)
+END

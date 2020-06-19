@@ -1,0 +1,85 @@
+// Neera expansion script
+
+// Initial setup
+IF 
+    InParty(Myself)
+    !Dead("Neera")
+    Global("LK#NeeraTalks","GLOBAL",0)
+THEN
+  RESPONSE #100
+    SetGlobal("LK#NeeraTalks","GLOBAL",1)
+    RealSetGlobalTimer("LK#NeeraTalksTimer","GLOBAL",LK#NEERA_TIMER)
+END
+
+// Triggering dialogues
+IF
+    InParty(Myself)
+    See(Player1)
+    IsValidForPartyDialogue(Myself)
+    IsValidForPartyDialogue(Player1)
+    RealGlobalTimerExpired("LK#NeeraTalksTimer","GLOBAL")
+    CombatCounter(0)
+    !See([ENEMY])
+    OR(11)
+      Global("LK#NeeraTalks","GLOBAL",2)
+      Global("LK#NeeraTalks","GLOBAL",6)
+      Global("LK#NeeraTalks","GLOBAL",8)
+      Global("LK#NeeraTalks","GLOBAL",12)
+      Global("LK#NeeraTalks","GLOBAL",14)
+      Global("LK#NeeraTalks","GLOBAL",16)
+      Global("LK#NeeraTalks","GLOBAL",18)
+      Global("LK#NeeraTalks","GLOBAL",22)
+      Global("LK#NeeraTalks","GLOBAL",20)
+      Global("LK#NeeraTalks","GLOBAL",24)
+      Global("LK#NeeraTalks","GLOBAL",26)
+THEN
+  RESPONSE #100
+    MoveToObject(Player1)
+    Dialogue(Player1)
+END
+
+IF
+    InParty(Myself)
+    !Dead("Neera")
+    See(Player1)
+    RealGlobalTimerExpired("LK#NeeraTalksTimer","GLOBAL")
+    OR(9)
+      Global("LK#NeeraTalks","GLOBAL",1)
+      Global("LK#NeeraTalks","GLOBAL",5)
+      Global("LK#NeeraTalks","GLOBAL",7)
+      Global("LK#NeeraTalks","GLOBAL",11)
+      Global("LK#NeeraTalks","GLOBAL",13)
+      Global("LK#NeeraTalks","GLOBAL",15)
+      Global("LK#NeeraTalks","GLOBAL",17)
+//      Global("LK#NeeraTalks","GLOBAL",19)
+      Global("LK#NeeraTalks","GLOBAL",21)
+      Global("LK#NeeraTalks","GLOBAL",23)
+THEN
+  RESPONSE #100
+    IncrementGlobal("LK#NeeraTalks","GLOBAL",1)
+END
+
+IF
+    InParty(Myself)
+    !Dead("Neera")
+    See(Player1)
+    RealGlobalTimerExpired("LK#NeeraTalksTimer","GLOBAL")
+    GlobalGT("Arrested","GLOBAL",0)
+    Global("LK#NeeraTalks","GLOBAL",19)
+THEN
+  RESPONSE #100
+    IncrementGlobal("LK#NeeraTalks","GLOBAL",1)
+END
+
+IF
+    InParty(Myself)
+    !Dead("Neera")
+    See(Player1)
+    RealGlobalTimerExpired("LK#NeeraTalksTimer","GLOBAL")
+    Global("chapter","GLOBAL",7)
+    Global("LK#NeeraTalks","GLOBAL",25)
+THEN
+  RESPONSE #100
+    IncrementGlobal("LK#NeeraTalks","GLOBAL",1)
+END
+
