@@ -1,10 +1,10 @@
-![Latest Release](https://img.shields.io/github/v/release/SpellholdStudios/Lucy_the_Wyvern?include_prereleases&color=darkred)<a name="top" id="top"> </a>
+![Latest Release](https://img.shields.io/github/v/release/SpellholdStudios/Neera_Expansion?include_prereleases&color=darkred)<a name="top" id="top"> </a>
 ![Platform](https://img.shields.io/static/v1?label=platform&message=windows%20%7C%20Mac%20%7C%20linux&color=informational)
-![Language](https://img.shields.io/static/v1?label=language&message=English%20%7C%20French%20%7C%20German%20%7C%20Italian%20%7C%20Polish%20%7C%20Russian%20%7C%20Spanish&color=limegreen)
+![Language](https://img.shields.io/static/v1?label=language&message=English%20%7C%20Russian&color=limegreen)
 
 <div align="center"><h1>Neera Expansion</h1>
 
-<h3>A Spellhold Studios mod for Baldur's Gate:SoA, ToB, Baldur's Gate Trilogy, BG2:EE and EET<h3>
+<h3>A Spellhold Studios mod for Baldur's Gate:Enhanced Edition<h3>
 
 </div><br />
 
@@ -58,6 +58,21 @@ This mod adds a series of dialogues to the lovely elven wild mage Neera, in an e
 ## <a name="versions" id="versions"></a>Version History
 
 #### Version 1.2 (June , 2020)
+
+- Added *neera.ini* metadata file to support AL|EN's "Project Infinity".
+- Replaced `AUTHOR` keyword with `SUPPORT`.
+- TODO Added missing `REQUIRE_PREDICATE` conditions to avoid installing components in inaccurate games.
+- TODO Added components `DESIGNATED` numbers and "**" `LABELS`.
+- Replaced old-school `DECOMPILE_BCS_TO_BAF` plus `COMPILE_BAF_TO_BCS` process with more accurate `DECOMPILE_AND_PATCH` command.
+- Added Russian translation (Thanks Austin).
+- Traified mod.
+- TODO Fixed typos in English .tra files.
+- TODO Updated and renamed readme file to *neera-exmapnsion-readme-english.html*, then moved it into new "*readme*" folder.
+- Reorganized mod architecture tree: created or renamed folders to sort files according to their types.
+- Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).
+- Added archive libiconv-1.9.2-1-src.7z with iconv licence info.
+- Updated WeiDU installer to v246.
+- Uploaded mod to official Spellhold Studios GitHub mirror account.
 
 ## 
 
