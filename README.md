@@ -63,10 +63,11 @@ This mod adds a series of dialogues to the lovely elven wild mage Neera, in an e
 - Replaced `AUTHOR` keyword with `SUPPORT`.
 - TODO Added missing `REQUIRE_PREDICATE` conditions to avoid installing components in inaccurate games.
 - TODO Added components `DESIGNATED` numbers and "**" `LABELS`.
+- Replaced old-school `DECOMPILE_DLG_TO_D` plus `COMPILE_D_TO_DLG` and destructive `REPLACE_SAY` processes with more accurate `DECOMPILE_AND_PATCH` command and WeiDU homemade "*gw_dlg_functions.tpa*" which dynamically modifies response transitions without overwriting dialog.tlk. Moreover, Game romance Tweaks components work now in foreign language!
 - Replaced old-school `DECOMPILE_BCS_TO_BAF` plus `COMPILE_BAF_TO_BCS` process with more accurate `DECOMPILE_AND_PATCH` command.
 - Added Russian translation (Thanks Austin).
 - Traified mod.
-- TODO Fixed typos in English .tra files.
+- Fixed typos in English .tra files.
 - TODO Updated and renamed readme file to *neera-exmapnsion-readme-english.html*, then moved it into new "*readme*" folder.
 - Reorganized mod architecture tree: created or renamed folders to sort files according to their types.
 - Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).

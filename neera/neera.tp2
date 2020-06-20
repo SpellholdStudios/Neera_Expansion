@@ -86,15 +86,58 @@ BEGIN @12	// ~Make Neera romanceable by women~
 GROUP @11	// ~Game romance tweaks~
 
 COPY_EXISTING ~neera.bcs~ ~override~
-/*  DECOMPILE_BCS_TO_BAF
-    REPLACE_TEXTUALLY ~Gender(Player1,MALE)~
-    ~~
-  COMPILE_BAF_TO_BCS
-*/	DECOMPILE_AND_PATCH BEGIN
+	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY ~Gender(Player1,MALE)~ ~~
 	END
 BUT_ONLY_IF_IT_CHANGES
 
+COMPILE ~neera/dialogue/neera_romance.d~
+
+// Loads functions library dealing with dlg.
+INCLUDE ~%MOD_FOLDER%/lib/gw_dlg_functions.tpa~
+
+// Looking for state using strref @42 (~If I didn't know better, mister adventurer sir, I'd say you were flirting with me.~)
+// -------------------------------------------------------------------------------------------------------------------------
+OUTER_SET neeraj_say42 = STATE_WHICH_SAYS 42 IN ~neera/lang/%s/flirts.tra~ FROM ~NEERAJ~
+PRINT ~Found @42 in NEERAJ.dlg for REPLACE_TEXTUALLY: state #%neeraj_say42%.~
+WITH_TRA ~neera/lang/%s/flirts.tra~  BEGIN
+	OUTER_SET neera42_strref = RESOLVE_STR_REF(@42)
+//	PRINT "neera42_strref = %neera42_strref%"
+END
+WITH_TRA ~neera/lang/%s/gameromancestweaks.tra~  BEGIN
+COPY_EXISTING ~neeraj.dlg~ ~override~
+	DECOMPILE_AND_PATCH BEGIN
+		REPLACE_TEXTUALLY ~SAY #%neera42_strref%~ ~SAY @99942~
+	END
+END
+
+// Looking for response using strref #28047 (~You know I'm a man of the world. I'm just saying I've had better.~).
+// ---------------------------------------------------------------------------------------------------------------
+COPY_EXISTING - ~neeraj.dlg~ ~override~
+	PATCH_IF (SOURCE_SIZE > 0x2f) THEN BEGIN	// protects against invalid files
+		LPF ~GW_FIND_DLG_RESPONSE_STRING~ INT_VAR GW_string_dlg = 28047 RET GW_transition_found GW_state_number GW_transition_number GW_response_index END
+		PATCH_IF ("%GW_transition_found%" STRING_EQUAL "Y") AND (GW_transition_number != "-99") BEGIN
+			SET neera_transition28047 = GW_transition_number
+			SET neera_state28047 = GW_state_number
+				PATCH_PRINT "%SOURCE_RES%.dlg	-	Transition found = %GW_transition_found%	-	state = #%GW_state_number%	-	transition = #%GW_transition_number% => response index = %GW_response_index%."
+		END
+	END	// of PATCH_IF (SOURCE_SIZE > 0x2f)
+BUT_ONLY
+
+// Replacing strref #28047 with @28047 (~You know I'm a traveler of the world. I'm just saying I've had better.~) and @42 with @99942 (~If I didn't know better, my good adventurer, I'd say you were flirting with me.~)
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ACTION_IF neera_state28047 >= 0 BEGIN	// Compiles only in case STATE_WHICH_SAYS throws a valid value
+	<<<<<<<< ...inlined/neeraromtweak.d
+ALTER_TRANS neeraj
+BEGIN %neera_state28047% END		// state number (can be more than one)
+BEGIN %neera_transition28047% END	// transition number (can be more than one)
+BEGIN								// list of changes
+	"REPLY" ~@28047~
+END
+>>>>>>>>
+	COMPILE EVALUATE_BUFFER ~...inlined/neeraromtweak.d~ USING ~neera/lang/%s/gameromancestweaks.tra~
+END
+/*
 COPY_EXISTING ~neeraj.dlg~ ~override~
   DECOMPILE_DLG_TO_D
     REPLACE_TEXTUALLY ~I'm a man of the world~
@@ -103,26 +146,88 @@ COPY_EXISTING ~neeraj.dlg~ ~override~
     ~my good adventurer~
   COMPILE_D_TO_DLG
 BUT_ONLY_IF_IT_CHANGES
-
-COMPILE ~neera/dialogue/neera_romance.d~
-
+*/
 
 BEGIN @13	// ~Make Rasaad romanceable by men~
 GROUP @11	// ~Game romance tweaks~
 
 COPY_EXISTING ~rasaad.bcs~ ~override~
-/*  DECOMPILE_BCS_TO_BAF
-    REPLACE_TEXTUALLY ~Gender(Player1,FEMALE)~
-    ~~
-  COMPILE_BAF_TO_BCS
-*/	DECOMPILE_AND_PATCH BEGIN
+	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY ~Gender(Player1,FEMALE)~ ~~
 	END
 BUT_ONLY_IF_IT_CHANGES
 
+// Loads functions library dealing with dlg.
+INCLUDE ~%MOD_FOLDER%/lib/gw_dlg_functions.tpa~
+
+// Looking for response using strrefs #30920, 30925, 30930 and 30935 (~But you also think I'm radiantly beautiful, right?~)
+// ------------------------------------------------------------------------------------------------------------------------
+COPY_EXISTING - ~rasaadj.dlg~ ~override~
+	PATCH_IF (SOURCE_SIZE > 0x2f) THEN BEGIN	// protects against invalid files
+		LPF ~GW_FIND_DLG_RESPONSE_STRING~ INT_VAR GW_string_dlg = 30920 RET GW_transition_found GW_state_number GW_transition_number GW_response_index END
+		PATCH_IF ("%GW_transition_found%" STRING_EQUAL "Y") AND (GW_transition_number != "-99") BEGIN
+			SET rasaad_transition30920 = GW_transition_number
+			SET rasaad_state30920 = GW_state_number
+			PATCH_PRINT "%SOURCE_RES%.dlg	-	Transition found = %GW_transition_found%	-	state = #%GW_state_number%	-	transition = #%GW_transition_number%  => response index = %GW_response_index%."
+		END
+		LPF ~GW_FIND_DLG_RESPONSE_STRING~ INT_VAR GW_string_dlg = 30925 RET GW_transition_found GW_state_number GW_transition_number GW_response_index END
+		PATCH_IF ("%GW_transition_found%" STRING_EQUAL "Y") AND (GW_transition_number != "-99") BEGIN
+			SET rasaad_transition30925 = GW_transition_number
+			SET rasaad_state30925 = GW_state_number
+			PATCH_PRINT "%SOURCE_RES%.dlg	-	Transition found = %GW_transition_found%	-	state = #%GW_state_number%	-	transition = #%GW_transition_number%  => response index = %GW_response_index%."
+		END
+		LPF ~GW_FIND_DLG_RESPONSE_STRING~ INT_VAR GW_string_dlg = 30930 RET GW_transition_found GW_state_number GW_transition_number GW_response_index END
+		PATCH_IF ("%GW_transition_found%" STRING_EQUAL "Y") AND (GW_transition_number != "-99") BEGIN
+			SET rasaad_transition30930 = GW_transition_number
+			SET rasaad_state30930 = GW_state_number
+			PATCH_PRINT "%SOURCE_RES%.dlg	-	Transition found = %GW_transition_found%	-	state = #%GW_state_number%	-	transition = #%GW_transition_number%  => response index = %GW_response_index%."
+		END
+		LPF ~GW_FIND_DLG_RESPONSE_STRING~ INT_VAR GW_string_dlg = 30935 RET GW_transition_found GW_state_number GW_transition_number GW_response_index END
+		PATCH_IF ("%GW_transition_found%" STRING_EQUAL "Y") AND (GW_transition_number != "-99") BEGIN
+			SET rasaad_transition30935 = GW_transition_number
+			SET rasaad_state30935 = GW_state_number
+			PATCH_PRINT "%SOURCE_RES%.dlg	-	Transition found = %GW_transition_found%	-	state = #%GW_state_number%	-	transition = #%GW_transition_number%  => response index = %GW_response_index%."
+		END
+	END	// of PATCH_IF (SOURCE_SIZE > 0x2f)
+BUT_ONLY
+
+// Replacing strref #30920, 30925, 30930 and 30935 with @28047 (~But you also think I'm incredibly good-looking, right?~)
+// ----------------------------------------------------------------------------------------------------------------------
+ACTION_IF rasaad_state30920 >= 0 BEGIN	// Compiles only in case STATE_WHICH_SAYS throws a valid value
+	<<<<<<<< ...inlined/rasaadromtweak.d
+ALTER_TRANS rasaadj
+BEGIN %rasaad_state30920% END		// state number (can be more than one)
+BEGIN %rasaad_transition30920% END	// transition number (can be more than one)
+BEGIN								// list of changes
+	"REPLY" ~@30920~
+END
+ALTER_TRANS rasaadj
+BEGIN %rasaad_state30925% END		// state number (can be more than one)
+BEGIN %rasaad_transition30925% END	// transition number (can be more than one)
+BEGIN								// list of changes
+	"REPLY" ~@30925~
+END
+ALTER_TRANS rasaadj
+BEGIN %rasaad_state30930% END		// state number (can be more than one)
+BEGIN %rasaad_transition30930% END	// transition number (can be more than one)
+BEGIN								// list of changes
+	"REPLY" ~@30930~
+END
+ALTER_TRANS rasaadj
+BEGIN %rasaad_state30935% END		// state number (can be more than one)
+BEGIN %rasaad_transition30935% END	// transition number (can be more than one)
+BEGIN								// list of changes
+	"REPLY" ~@30935~
+END
+>>>>>>>>
+	COMPILE EVALUATE_BUFFER ~...inlined/rasaadromtweak.d~ USING ~neera/lang/%s/gameromancestweaks.tra~
+END
+
+/*
 COPY_EXISTING ~rasaadj.dlg~ ~override~
   DECOMPILE_DLG_TO_D
     REPLACE_TEXTUALLY ~radiantly beautiful~
     ~incredibly good-looking~
   COMPILE_D_TO_DLG
 BUT_ONLY_IF_IT_CHANGES
+*/
