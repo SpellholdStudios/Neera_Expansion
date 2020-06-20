@@ -23,6 +23,7 @@ LANGUAGE ~Russian (Translation by Austin)~
  *    Neera Expansion    *
  * ===================== */
 BEGIN @2							// ~Neera Expansion~
+DESIGNATED 0 LABEL ~neera_expansion~
 GROUP @1							// ~Neera Expansion content~
 REQUIRE_PREDICATE GAME_IS ~bgee~ @3	// ~You must have Baldur's Gate: Enhanced Edition installed.~
 
@@ -42,6 +43,7 @@ EXTEND_BOTTOM ~neerad.bcs~ ~neera/scripts/neerad.baf~
  *    Talks intervals    *
  * ===================== */
 BEGIN @5								// ~15 minutes~
+DESIGNATED 1 LABEL ~neera_expansion_talks_900~
 REQUIRE_COMPONENT ~neera.tp2~ ~0~	@10	// ~You need the Neera Expansion installed!~
 SUBCOMPONENT @4							// ~How much time would you like between talks (approximately)?~
 GROUP @1								// ~Neera Expansion content~
@@ -50,6 +52,7 @@ COPY_EXISTING ~gtimes.ids~ ~gtimes.ids~
 	REPLACE_TEXTUALLY ~5400 LK#NEERA_TIMER~ ~900 LK#NEERA_TIMER~
 
 BEGIN @6								// ~30 minutes~
+DESIGNATED 2 LABEL ~neera_expansion_talks_1800~
 REQUIRE_COMPONENT ~neera.tp2~ ~0~	@10	// ~You need the Neera Expansion installed!~
 SUBCOMPONENT @4							// ~How much time would you like between talks (approximately)?~
 GROUP @1								// ~Neera Expansion content~
@@ -58,6 +61,7 @@ COPY_EXISTING ~gtimes.ids~ ~gtimes.ids~
 	REPLACE_TEXTUALLY ~5400 LK#NEERA_TIMER~ ~1800 LK#NEERA_TIMER~
 
 BEGIN @7								// ~1 hour~
+DESIGNATED 3 LABEL ~neera_expansion_talks_3600~
 REQUIRE_COMPONENT ~neera.tp2~ ~0~	@10	// ~You need the Neera Expansion installed!~
 SUBCOMPONENT @4							// ~How much time would you like between talks (approximately)?~
 GROUP @1								// ~Neera Expansion content~
@@ -66,11 +70,13 @@ COPY_EXISTING ~gtimes.ids~ ~gtimes.ids~
 	REPLACE_TEXTUALLY ~5400 LK#NEERA_TIMER~ ~3600 LK#NEERA_TIMER~
   
 BEGIN @8								// ~1.5 hours (default)~
+DESIGNATED 4 LABEL ~neera_expansion_talks_5400~
 REQUIRE_COMPONENT ~neera.tp2~ ~0~	@10	// ~You need the Neera Expansion installed!~
 SUBCOMPONENT @4							// ~How much time would you like between talks (approximately)?~
 GROUP @1								// ~Neera Expansion content~
 
 BEGIN @9								// ~2 hours~
+DESIGNATED 5 LABEL ~neera_expansion_talks_7200~
 REQUIRE_COMPONENT ~neera.tp2~ ~0~	@10	// ~You need the Neera Expansion installed!~
 SUBCOMPONENT @4							// ~How much time would you like between talks (approximately)?~
 GROUP @1								// ~Neera Expansion content~
@@ -82,8 +88,10 @@ COPY_EXISTING ~gtimes.ids~ ~gtimes.ids~
 /* ========================= *
  *    Game romance tweaks    *
  * ========================= */
-BEGIN @12	// ~Make Neera romanceable by women~
-GROUP @11	// ~Game romance tweaks~
+BEGIN @12								// ~Make Neera romanceable by women~
+DESIGNATED 6 LABEL ~neera_romanceable_by_women~
+REQUIRE_COMPONENT ~neera.tp2~ ~0~	@10	// ~You need the Neera Expansion installed!~
+GROUP @11								// ~Game romance tweaks~
 
 COPY_EXISTING ~neera.bcs~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
@@ -148,8 +156,10 @@ COPY_EXISTING ~neeraj.dlg~ ~override~
 BUT_ONLY_IF_IT_CHANGES
 */
 
-BEGIN @13	// ~Make Rasaad romanceable by men~
-GROUP @11	// ~Game romance tweaks~
+BEGIN @13							// ~Make Rasaad romanceable by men~
+DESIGNATED 7 LABEL ~rasaad_romanceable_by_men~
+REQUIRE_PREDICATE GAME_IS ~bgee~ @3	// ~You must have Baldur's Gate: Enhanced Edition installed.~
+GROUP @11							// ~Game romance tweaks~
 
 COPY_EXISTING ~rasaad.bcs~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
