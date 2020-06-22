@@ -32,7 +32,7 @@ BEGIN
 	READ_LONG 0x28 GW_offaction				// Offset of action table from start of file
 	READ_LONG 0x2c GW_numaction				// Number of actions
 	PATCH_IF (GW_debug_variable > 2) BEGIN
-		PATCH_PRINT ~%SOURCE_RES%	-	CONTROL 1 FUNCTION GW_FIND_DLG_RESPONSE_STRING	-	States = %GW_numstates%	at offset %GW_offstates%	-	Response = %GW_numresponse% at offset %GW_offresponse%.~
+		PATCH_PRINT ~%SOURCE_RES%	-	DEVP CONTROL 1 FUNCTION GW_FIND_DLG_RESPONSE_STRING	-	States = %GW_numstates%	at offset %GW_offstates%	-	Response = %GW_numresponse% at offset %GW_offresponse%.~
 	END
 */	FOR (state = 0 ; state < GW_numstates ; ++state) BEGIN
 		PATCH_IF ("%GW_transition_found%" STRING_COMPARE_CASE "Y") BEGIN
@@ -46,7 +46,7 @@ BEGIN
 					SET GW_response_index = GW_index_first_response + response
 					SET GW_state_number = state
 					SPRINT GW_transition_found "Y"
-					PATCH_PRINT ~	%SOURCE_RES%	-	CONTROL FONCTION GW_FIND_DLG_RESPONSE_STRING	-	State #%state% = %GW_state_string%	-	Response #%response% = %GW_response_string%. - index = %GW_response_index%.~
+//					PATCH_PRINT ~	%SOURCE_RES%	-	DEVPT CONTROL 2 FUNCTION GW_FIND_DLG_RESPONSE_STRING	-	State #%state% = %GW_state_string%	-	Response #%response% = %GW_response_string%. - index = %GW_response_index%.~
 				END
 			END	// of Looping through responses
 		END		// PATCH_IF ("%GW_transition_found%" STRING_COMPARE_CASE "Y")

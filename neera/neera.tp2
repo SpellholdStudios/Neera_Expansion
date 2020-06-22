@@ -1,7 +1,6 @@
-// --------------------------------------------
-// Mod setup
-// --------------------------------------------
-// Basics
+/* ***************
+ *   Mod setup   *
+ * ***************/
 BACKUP ~neera/backup~
 AUTHOR ~K'aeloree (kae@spellholdstudios.net)~
 VERSION ~v1.1~
@@ -106,8 +105,8 @@ INCLUDE ~%MOD_FOLDER%/lib/gw_dlg_functions.tpa~
 
 // Looking for state using strref @42 (~If I didn't know better, mister adventurer sir, I'd say you were flirting with me.~)
 // -------------------------------------------------------------------------------------------------------------------------
-OUTER_SET neeraj_say42 = STATE_WHICH_SAYS 42 IN ~neera/lang/%s/flirts.tra~ FROM ~NEERAJ~
-PRINT ~Found @42 in NEERAJ.dlg for REPLACE_TEXTUALLY: state #%neeraj_say42%.~
+/*OUTER_SET neeraj_say42 = STATE_WHICH_SAYS 42 IN ~neera/lang/%s/flirts.tra~ FROM ~NEERAJ~
+PRINT ~DEVPT CONTROL Found @42 in NEERAJ.dlg for REPLACE_TEXTUALLY: state #%neeraj_say42%.~*/
 WITH_TRA ~neera/lang/%s/flirts.tra~  BEGIN
 	OUTER_SET neera42_strref = RESOLVE_STR_REF(@42)
 //	PRINT "neera42_strref = %neera42_strref%"
@@ -127,7 +126,7 @@ COPY_EXISTING - ~neeraj.dlg~ ~override~
 		PATCH_IF ("%GW_transition_found%" STRING_EQUAL "Y") AND (GW_transition_number != "-99") BEGIN
 			SET neera_transition28047 = GW_transition_number
 			SET neera_state28047 = GW_state_number
-				PATCH_PRINT "%SOURCE_RES%.dlg	-	Transition found = %GW_transition_found%	-	state = #%GW_state_number%	-	transition = #%GW_transition_number% => response index = %GW_response_index%."
+//			PATCH_PRINT "DEVPT CONTROL %SOURCE_RES%.dlg	-	Transition found = %GW_transition_found%	-	state = #%GW_state_number%	-	transition = #%GW_transition_number% => response index = %GW_response_index%."
 		END
 	END	// of PATCH_IF (SOURCE_SIZE > 0x2f)
 BUT_ONLY
@@ -145,16 +144,7 @@ END
 >>>>>>>>
 	COMPILE EVALUATE_BUFFER ~...inlined/neeraromtweak.d~ USING ~neera/lang/%s/gameromancestweaks.tra~
 END
-/*
-COPY_EXISTING ~neeraj.dlg~ ~override~
-  DECOMPILE_DLG_TO_D
-    REPLACE_TEXTUALLY ~I'm a man of the world~
-    ~I'm a traveler of the world~
-    REPLACE_TEXTUALLY ~mister adventurer sir~
-    ~my good adventurer~
-  COMPILE_D_TO_DLG
-BUT_ONLY_IF_IT_CHANGES
-*/
+
 
 BEGIN @13							// ~Make Rasaad romanceable by men~
 DESIGNATED 7 LABEL ~rasaad_romanceable_by_men~
@@ -178,25 +168,25 @@ COPY_EXISTING - ~rasaadj.dlg~ ~override~
 		PATCH_IF ("%GW_transition_found%" STRING_EQUAL "Y") AND (GW_transition_number != "-99") BEGIN
 			SET rasaad_transition30920 = GW_transition_number
 			SET rasaad_state30920 = GW_state_number
-			PATCH_PRINT "%SOURCE_RES%.dlg	-	Transition found = %GW_transition_found%	-	state = #%GW_state_number%	-	transition = #%GW_transition_number%  => response index = %GW_response_index%."
+//			PATCH_PRINT "DEVPT CONTROL %SOURCE_RES%.dlg	-	Transition found = %GW_transition_found%	-	state = #%GW_state_number%	-	transition = #%GW_transition_number%  => response index = %GW_response_index%."
 		END
 		LPF ~GW_FIND_DLG_RESPONSE_STRING~ INT_VAR GW_string_dlg = 30925 RET GW_transition_found GW_state_number GW_transition_number GW_response_index END
 		PATCH_IF ("%GW_transition_found%" STRING_EQUAL "Y") AND (GW_transition_number != "-99") BEGIN
 			SET rasaad_transition30925 = GW_transition_number
 			SET rasaad_state30925 = GW_state_number
-			PATCH_PRINT "%SOURCE_RES%.dlg	-	Transition found = %GW_transition_found%	-	state = #%GW_state_number%	-	transition = #%GW_transition_number%  => response index = %GW_response_index%."
+//			PATCH_PRINT "DEVPT CONTROL %SOURCE_RES%.dlg	-	Transition found = %GW_transition_found%	-	state = #%GW_state_number%	-	transition = #%GW_transition_number%  => response index = %GW_response_index%."
 		END
 		LPF ~GW_FIND_DLG_RESPONSE_STRING~ INT_VAR GW_string_dlg = 30930 RET GW_transition_found GW_state_number GW_transition_number GW_response_index END
 		PATCH_IF ("%GW_transition_found%" STRING_EQUAL "Y") AND (GW_transition_number != "-99") BEGIN
 			SET rasaad_transition30930 = GW_transition_number
 			SET rasaad_state30930 = GW_state_number
-			PATCH_PRINT "%SOURCE_RES%.dlg	-	Transition found = %GW_transition_found%	-	state = #%GW_state_number%	-	transition = #%GW_transition_number%  => response index = %GW_response_index%."
+//			PATCH_PRINT "DEVPT CONTROL %SOURCE_RES%.dlg	-	Transition found = %GW_transition_found%	-	state = #%GW_state_number%	-	transition = #%GW_transition_number%  => response index = %GW_response_index%."
 		END
 		LPF ~GW_FIND_DLG_RESPONSE_STRING~ INT_VAR GW_string_dlg = 30935 RET GW_transition_found GW_state_number GW_transition_number GW_response_index END
 		PATCH_IF ("%GW_transition_found%" STRING_EQUAL "Y") AND (GW_transition_number != "-99") BEGIN
 			SET rasaad_transition30935 = GW_transition_number
 			SET rasaad_state30935 = GW_state_number
-			PATCH_PRINT "%SOURCE_RES%.dlg	-	Transition found = %GW_transition_found%	-	state = #%GW_state_number%	-	transition = #%GW_transition_number%  => response index = %GW_response_index%."
+//			PATCH_PRINT "DEVPT CONTROL %SOURCE_RES%.dlg	-	Transition found = %GW_transition_found%	-	state = #%GW_state_number%	-	transition = #%GW_transition_number%  => response index = %GW_response_index%."
 		END
 	END	// of PATCH_IF (SOURCE_SIZE > 0x2f)
 BUT_ONLY
@@ -232,12 +222,3 @@ END
 >>>>>>>>
 	COMPILE EVALUATE_BUFFER ~...inlined/rasaadromtweak.d~ USING ~neera/lang/%s/gameromancestweaks.tra~
 END
-
-/*
-COPY_EXISTING ~rasaadj.dlg~ ~override~
-  DECOMPILE_DLG_TO_D
-    REPLACE_TEXTUALLY ~radiantly beautiful~
-    ~incredibly good-looking~
-  COMPILE_D_TO_DLG
-BUT_ONLY_IF_IT_CHANGES
-*/
