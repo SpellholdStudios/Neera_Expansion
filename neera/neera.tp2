@@ -6,8 +6,11 @@ BACKUP ~neera/backup~
 SUPPORT ~K'aeloree and Spellhold Studios at http://www.shsforums.net/topic/60850-neera-expansion-updated-to-v120/~
 
 VERSION ~v1.1~
-README ~neera/neera_readme.html~
-//MODDER
+
+README ~neera/readme/neera-expansion-readme-english.html~
+
+// MODDER
+
 
 AUTO_TRA ~neera/lang/%s~
 

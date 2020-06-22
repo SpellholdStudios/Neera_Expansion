@@ -216,7 +216,7 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 - Added Russian translation (Thanks Austin).
 - Traified mod.
 - Fixed typos in English .tra files.
-- TODO Updated and renamed readme file to *neera-expansion-readme-english.html*, then moved it into new "*readme*" folder.
+- Updated and renamed readme file to *neera-expansion-readme-english.html*, then moved it into new "*readme*" folder.
 - Reorganized mod architecture tree: created or renamed folders to sort files according to their types.
 - Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).
 - Updated WeiDU installer to v246.
