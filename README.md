@@ -11,7 +11,7 @@
 
 **Author:** K'aeloree  
 **Mod Website:** <a href="http://www.spellholdstudios.net/ie/neera">Spellhold Studios</a>  
-**Mod Forum:** <a href="">IEP Expanded Banters</a>
+**Mod Forum:** <a href="http://www.shsforums.net/topic/60850-neera-expansion-updated-to-v120/">IEP Expanded Banters</a>
 
 
 [Read the mod's readme](https://spellholdstudios.github.io/readmes/neera-expansion-readme-english.html)
@@ -49,7 +49,7 @@ Once you've had your first lovetalk with Neera, a flirt menu becomes available v
 
 This mod is designed to work on Baldur's Gate: Enhanced Edition (BGEE.
 
-This is a WeiDU mod, and therefore should be compatible with all WeiDU mods. If you encounter any bugs, please contact <a href="kae@spellholdstudios.net">K'aeloree</a> or alternatively post on the <a href="">forums</a><br>
+This is a WeiDU mod, and therefore should be compatible with all WeiDU mods. If you encounter any bugs, please contact <a href="kae@spellholdstudios.net">K'aeloree</a> or alternatively post on the <a href="http://www.shsforums.net/topic/60850-neera-expansion-updated-to-v120/">forums</a><br>
 <div align="right"><a href="#top">Back to top</a></div>
 
 
@@ -123,16 +123,18 @@ The installer includes the following components. The number of each is the compo
 
 ### Neera Expansion group
 
+## 
+
 **[0] Neera Expansion** (Main component)  
 
 ## 
 
 **[1-5] How much time would you like between talks (approximately)?**  
-**1. 15 minutes**
-**2. 30 minutes**
-**3. 1 hour**
-**4. 1.5 hours** (default)
-**5. 2 hours**
+**1. 15 minutes**  
+**2. 30 minutes**  
+**3. 1 hour**  
+**4. 1.5 hours** (default)  
+**5. 2 hours**  
 
 This component defines talks intervals frequency.
 
@@ -140,8 +142,9 @@ This component defines talks intervals frequency.
 
 ### BG:EE Game romance tweaks group
 
-One of the most-requested tweaks is to make Neera and Rasaad same-sex romanceable, so with Jalily's help I created two components to do so. Their dialogue will be appropriately altered to suit either gender, and the romance should begin as normal. There are two components; one that makes Neera romanceable by women, and one that makes Rasaad romanceable by men.
+One of the most-requested tweaks is to make Neera and Rasaad same-sex romanceable, so with Jalily's help I created two components to do so. Their dialogue will be appropriately altered to suit either gender, and the romance should begin as normal. There are two components:
 
+## 
 
 **[6] Make Neera romanceable by women**
 
@@ -167,7 +170,7 @@ One of the most-requested tweaks is to make Neera and Rasaad same-sex romanceabl
 - Austin: Russian translation and traification..
 - Everyone else from the <a href="http://www.shsforums.net/">Spellhold Studios</a> and BG:EE forums for testing and giving feedback!.
 
-If you wish to translate the mod, have a suggestion, or should encounter any bugs, please report them to the maintainers at the <a href="">mod forum</a>.</br>
+If you wish to translate the mod, have a suggestion, or should encounter any bugs, please report them to the maintainers at the <a href="http://www.shsforums.net/topic/60850-neera-expansion-updated-to-v120/">mod forum</a>.</br>
 
 ## 
 
@@ -208,7 +211,7 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 - Replaced `AUTHOR` keyword with `SUPPORT`.
 - Added missing `REQUIRE_PREDICATE` conditions to avoid installing components in inaccurate games.
 - Added components `DESIGNATED` numbers and "*neera_expansion*", "*neera_expansion_talks_900*", "*neera_expansion_talks_1800*", "*neera_expansion_talks_3600*", "*neera_expansion_talks_5400*", "*neera_expansion_talks_7200*", "*neera_romanceable_by_women*" and "*rasaad_romanceable_by_men*" `LABELS`.
-- Replaced old-school `DECOMPILE_DLG_TO_D` plus `COMPILE_D_TO_DLG` and destructive `REPLACE_SAY` processes with more accurate `DECOMPILE_AND_PATCH` command and WeiDU homemade "*gw_dlg_functions.tpa*" which dynamically modifies response transitions without overwriting dialog.tlk. Moreover, Game romance Tweaks components work now in foreign language!
+- Replaced old-school `DECOMPILE_DLG_TO_D` plus `COMPILE_D_TO_DLG` and destructive `REPLACE_SAY` processes with more accurate `DECOMPILE_AND_PATCH` command and WeiDU homemade "*gw_dlg_functions.tpa*" library which dynamically modifies response transitions without overwriting dialog.tlk. Moreover, the two "*Game romance tweaks*" components work now in foreign language! :wink:
 - Replaced old-school `DECOMPILE_BCS_TO_BAF` plus `COMPILE_BAF_TO_BCS` process with more accurate `DECOMPILE_AND_PATCH` command.
 - Added Russian translation (Thanks Austin).
 - Traified mod.
