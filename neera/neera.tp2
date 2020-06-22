@@ -2,7 +2,9 @@
  *   Mod setup   *
  * ***************/
 BACKUP ~neera/backup~
-AUTHOR ~K'aeloree (kae@spellholdstudios.net)~
+//AUTHOR ~K'aeloree (kae@spellholdstudios.net)~
+SUPPORT ~K'aeloree and Spellhold Studios at http://www.shsforums.net/topic/60850-neera-expansion-updated-to-v120/~
+
 VERSION ~v1.1~
 README ~neera/neera_readme.html~
 //MODDER
@@ -191,8 +193,8 @@ COPY_EXISTING - ~rasaadj.dlg~ ~override~
 	END	// of PATCH_IF (SOURCE_SIZE > 0x2f)
 BUT_ONLY
 
-// Replacing strref #30920, 30925, 30930 and 30935 with @28047 (~But you also think I'm incredibly good-looking, right?~)
-// ----------------------------------------------------------------------------------------------------------------------
+// Replacing strref #30920, 30925, 30930 and 30935 with @30920, 30925, 30930 and 30935 (~But you also think I'm incredibly good-looking, right?~)
+// ----------------------------------------------------------------------------------------------------------------------------------------------
 ACTION_IF rasaad_state30920 >= 0 BEGIN	// Compiles only in case STATE_WHICH_SAYS throws a valid value
 	<<<<<<<< ...inlined/rasaadromtweak.d
 ALTER_TRANS rasaadj
