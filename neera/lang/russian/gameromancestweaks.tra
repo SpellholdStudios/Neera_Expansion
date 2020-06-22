@@ -1,0 +1,31 @@
+/* ================================= *
+ *  Make Neera romanceable by women  *
+ * ================================= */
+
+/* NOTE FOR TRANSLATORS: The idea is to make Neera romanceable by both men and women
+
+@28047 comes from #28047 BG:EE strref : ~You know I'm a man of the world. I'm just saying I've had better.~
+@99942 comes from flirts.tra (@42 = ~If I didn't know better, mister adventurer sir, I'd say you were flirting with me.~)
+*/
+@28047 = ~Ты ведь знаешь, я человек мира. Просто говорю, что мне лучше.~
+
+@99942 = ~Если бы я не знала тебя лучше, мой добрый искатель приключений, я бы сказала, что ты со мной флиртуешь.~
+
+
+/* ================================ *
+ *  Make Rasaad romanceable by men  *
+ * ================================ */
+
+/* NOTE FOR TRANSLATORS: The idea is to make Rasaad romanceable by both men and women
+
+@30920 comes from #30920 BG:EE strref : ~But you also think I'm radiantly beautiful, right?~
+@30925 comes from #30920 BG:EE strref : ~But you also think I'm radiantly beautiful, right?~
+@30930 comes from #30920 BG:EE strref : ~But you also think I'm radiantly beautiful, right?~
+@30935 comes from #30920 BG:EE strref : ~But you also think I'm radiantly beautiful, right?~
+
+They should be the same, but just in case...
+*/
+@30920 = ~Но ты думаешь, что я невероятно хорошо выгляжу, верно?~ 
+@30925 = ~Но ты думаешь, что я невероятно хорошо выгляжу, верно?~
+@30930 = ~Но ты думаешь, что я невероятно хорошо выгляжу, верно?~
+@30935 = ~Но ты думаешь, что я невероятно хорошо выгляжу, верно?~

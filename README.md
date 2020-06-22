@@ -176,7 +176,7 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 
 #### Programs/tools used in creation:
 
-- <a href="https://github.com/WeiDUorg/weidu/releases"WeiDU</a>, by Wes Weimer, the bigg and Wisp.
+- <a href="https://github.com/WeiDUorg/weidu/releases">WeiDU</a>, by Wes Weimer, the bigg and Wisp.
 - <a href="https://github.com/Argent77/NearInfinity/releases">Near Infinity</a>, by Jon Olav Hauglid, FredSRichardson, and Argent77.
 - <a href="http://www.shsforums.net/topic/31285-infinity-explorer-v085/">Infinity Explorer</a>, by Dmitry Jemerov / bigmoshi.
 - <a href="https://gibberlings3.github.io/iesdp/"><acronym title="Infinity Engine Structures Description Project">IESDP</acronym></a>, maintained by igi and lynx.
@@ -205,13 +205,13 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 
 ## <a name="versions" id="versions"></a>Version History
 
-#### Version 1.2 (June , 2020)
+#### Version 1.2.0 (June , 2020)
 
 - Added *neera.ini* metadata file to support AL|EN's "Project Infinity".
 - Replaced `AUTHOR` keyword with `SUPPORT`.
 - Added missing `REQUIRE_PREDICATE` conditions to avoid installing components in inaccurate games.
 - Added components `DESIGNATED` numbers and "*neera_expansion*", "*neera_expansion_talks_900*", "*neera_expansion_talks_1800*", "*neera_expansion_talks_3600*", "*neera_expansion_talks_5400*", "*neera_expansion_talks_7200*", "*neera_romanceable_by_women*" and "*rasaad_romanceable_by_men*" `LABELS`.
-- Replaced old-school `DECOMPILE_DLG_TO_D` plus `COMPILE_D_TO_DLG` and destructive `REPLACE_SAY` processes with more accurate `DECOMPILE_AND_PATCH` command and WeiDU homemade "*gw_dlg_functions.tpa*" library which dynamically modifies response transitions without overwriting dialog.tlk. Moreover, the two "*Game romance tweaks*" components work now in foreign language! :wink:
+- Replaced old-school `DECOMPILE_DLG_TO_D` plus `COMPILE_D_TO_DLG` and destructive `REPLACE_SAY` processes with more accurate `DECOMPILE_AND_PATCH` command and WeiDU homemade "*gw_dlg_functions.tpa*" library which dynamically modifies response transitions without overwriting dialog.tlk. Moreover, the two "*Game romance tweaks*" components work now in foreign languages! :wink:
 - Replaced old-school `DECOMPILE_BCS_TO_BAF` plus `COMPILE_BAF_TO_BCS` process with more accurate `DECOMPILE_AND_PATCH` command.
 - Added Russian translation (Thanks Austin).
 - Traified mod.
