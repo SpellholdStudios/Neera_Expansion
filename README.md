@@ -205,7 +205,7 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 
 ## <a name="versions" id="versions"></a>Version History
 
-#### Version 1.2.0 (June , 2020)
+#### Version 1.2.0 (June 22, 2020)
 
 - Added *neera.ini* metadata file to support AL|EN's "Project Infinity".
 - Replaced `AUTHOR` keyword with `SUPPORT`.
