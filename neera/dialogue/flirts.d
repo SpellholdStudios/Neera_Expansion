@@ -1,5 +1,5 @@
 // Neera flirts
-APPEND NEERAJ
+APPEND %NEERA_JOINED%
 
 
 IF WEIGHT #500 ~IsGabber(Player1) GlobalGT("NEERA_ROMANCE","GLOBAL",0) RandomNum(4,1)~ pid

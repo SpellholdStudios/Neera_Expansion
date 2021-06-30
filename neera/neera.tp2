@@ -5,12 +5,21 @@ BACKUP ~neera/backup~
 //AUTHOR ~K'aeloree (kae@spellholdstudios.net)~
 SUPPORT ~K'aeloree and Spellhold Studios at http://www.shsforums.net/topic/60850-neera-expansion-updated-to-v120/~
 
-VERSION ~v1.2.0~
+VERSION ~v1.3.0~
 
 README ~neera/readme/neera-expansion-readme-english.html~
 
 // MODDER
 
+ALWAYS
+	ACTION_IF GAME_IS ~bgee~ BEGIN
+		INCLUDE ~%MOD_FOLDER%/lib/liam_bgee_vars.tpa~
+		OUTER_SET strref_add = 0
+	END ELSE ACTION_IF GAME_IS ~eet~ BEGIN
+		INCLUDE ~%MOD_FOLDER%/lib/eet_cpmvars.tpa~
+		OUTER_SET strref_add = 200000
+	END
+END
 
 AUTO_TRA ~neera/lang/%s~
 
@@ -29,19 +38,18 @@ LANGUAGE ~Russian (Translation by Austin)~
 BEGIN @2							// ~Neera Expansion~
 DESIGNATED 0 LABEL ~neera_expansion~
 GROUP @1							// ~Neera Expansion content~
-REQUIRE_PREDICATE GAME_IS ~bgee~ @3	// ~You must have Baldur's Gate: Enhanced Edition installed.~
+REQUIRE_PREDICATE GAME_IS ~bgee eet~ @3	// ~You must have Baldur's Gate: Enhanced Edition installed.~
 
 // Appending gtimes.ids to include the timer
 APPEND ~gtimes.ids~ ~5400 LK#NEERA_TIMER~ UNLESS ~LK#NEERA_TIMER~
 
 // Compile dialogues
-COMPILE ~neera/dialogue/neeraj.d~
-COMPILE ~neera/dialogue/flirts.d~
+COMPILE EVALUATE_BUFFER ~neera/dialogue/neeraj.d~
+COMPILE EVALUATE_BUFFER ~neera/dialogue/flirts.d~
 
 // Compile scripts
-EXTEND_BOTTOM ~neera.bcs~  ~neera/scripts/neera.baf~
-EXTEND_BOTTOM ~neerad.bcs~ ~neera/scripts/neerad.baf~
-
+EXTEND_BOTTOM ~%NEERA_BCS%.bcs~ ~neera/scripts/neera.baf~ EVALUATE_BUFFER
+EXTEND_BOTTOM ~neerad%eet_var%.bcs~ ~neera/scripts/neerad.baf~ EVALUATE_BUFFER
 
 /* ===================== *
  *    Talks intervals    *
@@ -92,32 +100,46 @@ COPY_EXISTING ~gtimes.ids~ ~gtimes.ids~
 /* ========================= *
  *    Game romance tweaks    *
  * ========================= */
-BEGIN @12								// ~Make Neera romanceable by women~
+BEGIN @12								// ~Make NEERA romanceable by women~
 DESIGNATED 6 LABEL ~neera_romanceable_by_women~
 REQUIRE_COMPONENT ~neera.tp2~ ~0~	@10	// ~You need the Neera Expansion installed!~
 GROUP @11								// ~Game romance tweaks~
 
-COPY_EXISTING ~neera.bcs~ ~override~
+COPY_EXISTING ~%NEERA_BCS%.bcs~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY ~Gender(Player1,MALE)~ ~~
 	END
 BUT_ONLY_IF_IT_CHANGES
 
-COMPILE ~neera/dialogue/neera_romance.d~
+ACTION_IF GAME_IS ~bgee~ BEGIN
+	OUTER_SET strref_28035 = 28035
+	OUTER_SET strref_28036 = 28036
+	OUTER_SET strref_28027 = 28027
+	OUTER_SET strref_28028 = 28028
+	OUTER_SET strref_28029 = 28029
+END ELSE ACTION_IF GAME_IS ~eet~ BEGIN
+	OUTER_SET strref_28035 = 228035
+	OUTER_SET strref_28036 = 228036
+	OUTER_SET strref_28027 = 228027
+	OUTER_SET strref_28028 = 228028
+	OUTER_SET strref_28029 = 228029
+END
+
+COMPILE EVALUATE_BUFFER ~neera/dialogue/neera_romance.d~
 
 // Loads functions library dealing with dlg.
 INCLUDE ~%MOD_FOLDER%/lib/gw_dlg_functions.tpa~
 
 // Looking for state using strref @42 (~If I didn't know better, mister adventurer sir, I'd say you were flirting with me.~)
 // -------------------------------------------------------------------------------------------------------------------------
-/*OUTER_SET neeraj_say42 = STATE_WHICH_SAYS 42 IN ~neera/lang/%s/flirts.tra~ FROM ~NEERAJ~
-PRINT ~DEVPT CONTROL Found @42 in NEERAJ.dlg for REPLACE_TEXTUALLY: state #%neeraj_say42%.~*/
+/*OUTER_SET neeraj_say42 = STATE_WHICH_SAYS 42 IN ~neera/lang/%s/flirts.tra~ FROM ~%NEERA_JOINED%~
+PRINT ~DEVPT CONTROL Found @42 in %NEERA_JOINED%.dlg for REPLACE_TEXTUALLY: state #%neeraj_say42%.~*/
 WITH_TRA ~neera/lang/%s/flirts.tra~  BEGIN
 	OUTER_SET neera42_strref = RESOLVE_STR_REF(@42)
 //	PRINT "neera42_strref = %neera42_strref%"
 END
 WITH_TRA ~neera/lang/%s/gameromancestweaks.tra~  BEGIN
-COPY_EXISTING ~neeraj.dlg~ ~override~
+COPY_EXISTING ~%NEERA_JOINED%.dlg~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY ~SAY #%neera42_strref%~ ~SAY @99942~
 	END
@@ -125,9 +147,9 @@ END
 
 // Looking for response using strref #28047 (~You know I'm a man of the world. I'm just saying I've had better.~).
 // ---------------------------------------------------------------------------------------------------------------
-COPY_EXISTING - ~neeraj.dlg~ ~override~
+COPY_EXISTING - ~%NEERA_JOINED%.dlg~ ~override~
 	PATCH_IF (SOURCE_SIZE > 0x2f) THEN BEGIN	// protects against invalid files
-		LPF ~GW_FIND_DLG_RESPONSE_STRING~ INT_VAR GW_string_dlg = 28047 RET GW_transition_found GW_state_number GW_transition_number GW_response_index END
+		LPF ~GW_FIND_DLG_RESPONSE_STRING~ INT_VAR GW_string_dlg = 28047 + strref_add RET GW_transition_found GW_state_number GW_transition_number GW_response_index END
 		PATCH_IF ("%GW_transition_found%" STRING_EQUAL "Y") AND (GW_transition_number != "-99") BEGIN
 			SET neera_transition28047 = GW_transition_number
 			SET neera_state28047 = GW_state_number
@@ -140,7 +162,7 @@ BUT_ONLY
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ACTION_IF neera_state28047 >= 0 BEGIN	// Compiles only in case STATE_WHICH_SAYS throws a valid value
 	<<<<<<<< ...inlined/neeraromtweak.d
-ALTER_TRANS neeraj
+ALTER_TRANS %NEERA_JOINED%
 BEGIN %neera_state28047% END		// state number (can be more than one)
 BEGIN %neera_transition28047% END	// transition number (can be more than one)
 BEGIN								// list of changes
@@ -153,10 +175,10 @@ END
 
 BEGIN @13							// ~Make Rasaad romanceable by men~
 DESIGNATED 7 LABEL ~rasaad_romanceable_by_men~
-REQUIRE_PREDICATE GAME_IS ~bgee~ @3	// ~You must have Baldur's Gate: Enhanced Edition installed.~
+REQUIRE_PREDICATE GAME_IS ~bgee eet~ @3	// ~You must have Baldur's Gate: Enhanced Edition installed.~
 GROUP @11							// ~Game romance tweaks~
 
-COPY_EXISTING ~rasaad.bcs~ ~override~
+COPY_EXISTING ~%RASAAD_BCS%.bcs~ ~override~
 	DECOMPILE_AND_PATCH BEGIN
 		REPLACE_TEXTUALLY ~Gender(Player1,FEMALE)~ ~~
 	END
@@ -167,27 +189,27 @@ INCLUDE ~%MOD_FOLDER%/lib/gw_dlg_functions.tpa~
 
 // Looking for response using strrefs #30920, 30925, 30930 and 30935 (~But you also think I'm radiantly beautiful, right?~)
 // ------------------------------------------------------------------------------------------------------------------------
-COPY_EXISTING - ~rasaadj.dlg~ ~override~
+COPY_EXISTING - ~%RASAAD_JOINED%.dlg~ ~override~
 	PATCH_IF (SOURCE_SIZE > 0x2f) THEN BEGIN	// protects against invalid files
-		LPF ~GW_FIND_DLG_RESPONSE_STRING~ INT_VAR GW_string_dlg = 30920 RET GW_transition_found GW_state_number GW_transition_number GW_response_index END
+		LPF ~GW_FIND_DLG_RESPONSE_STRING~ INT_VAR GW_string_dlg = 30920 + strref_add RET GW_transition_found GW_state_number GW_transition_number GW_response_index END
 		PATCH_IF ("%GW_transition_found%" STRING_EQUAL "Y") AND (GW_transition_number != "-99") BEGIN
 			SET rasaad_transition30920 = GW_transition_number
 			SET rasaad_state30920 = GW_state_number
 //			PATCH_PRINT "DEVPT CONTROL %SOURCE_RES%.dlg	-	Transition found = %GW_transition_found%	-	state = #%GW_state_number%	-	transition = #%GW_transition_number%  => response index = %GW_response_index%."
 		END
-		LPF ~GW_FIND_DLG_RESPONSE_STRING~ INT_VAR GW_string_dlg = 30925 RET GW_transition_found GW_state_number GW_transition_number GW_response_index END
+		LPF ~GW_FIND_DLG_RESPONSE_STRING~ INT_VAR GW_string_dlg = 30925 + strref_add RET GW_transition_found GW_state_number GW_transition_number GW_response_index END
 		PATCH_IF ("%GW_transition_found%" STRING_EQUAL "Y") AND (GW_transition_number != "-99") BEGIN
 			SET rasaad_transition30925 = GW_transition_number
 			SET rasaad_state30925 = GW_state_number
 //			PATCH_PRINT "DEVPT CONTROL %SOURCE_RES%.dlg	-	Transition found = %GW_transition_found%	-	state = #%GW_state_number%	-	transition = #%GW_transition_number%  => response index = %GW_response_index%."
 		END
-		LPF ~GW_FIND_DLG_RESPONSE_STRING~ INT_VAR GW_string_dlg = 30930 RET GW_transition_found GW_state_number GW_transition_number GW_response_index END
+		LPF ~GW_FIND_DLG_RESPONSE_STRING~ INT_VAR GW_string_dlg = 30930 + strref_add RET GW_transition_found GW_state_number GW_transition_number GW_response_index END
 		PATCH_IF ("%GW_transition_found%" STRING_EQUAL "Y") AND (GW_transition_number != "-99") BEGIN
 			SET rasaad_transition30930 = GW_transition_number
 			SET rasaad_state30930 = GW_state_number
 //			PATCH_PRINT "DEVPT CONTROL %SOURCE_RES%.dlg	-	Transition found = %GW_transition_found%	-	state = #%GW_state_number%	-	transition = #%GW_transition_number%  => response index = %GW_response_index%."
 		END
-		LPF ~GW_FIND_DLG_RESPONSE_STRING~ INT_VAR GW_string_dlg = 30935 RET GW_transition_found GW_state_number GW_transition_number GW_response_index END
+		LPF ~GW_FIND_DLG_RESPONSE_STRING~ INT_VAR GW_string_dlg = 30935 + strref_add RET GW_transition_found GW_state_number GW_transition_number GW_response_index END
 		PATCH_IF ("%GW_transition_found%" STRING_EQUAL "Y") AND (GW_transition_number != "-99") BEGIN
 			SET rasaad_transition30935 = GW_transition_number
 			SET rasaad_state30935 = GW_state_number
@@ -200,25 +222,25 @@ BUT_ONLY
 // ----------------------------------------------------------------------------------------------------------------------------------------------
 ACTION_IF rasaad_state30920 >= 0 BEGIN	// Compiles only in case STATE_WHICH_SAYS throws a valid value
 	<<<<<<<< ...inlined/rasaadromtweak.d
-ALTER_TRANS rasaadj
+ALTER_TRANS %RASAAD_JOINED%
 BEGIN %rasaad_state30920% END		// state number (can be more than one)
 BEGIN %rasaad_transition30920% END	// transition number (can be more than one)
 BEGIN								// list of changes
 	"REPLY" ~@30920~
 END
-ALTER_TRANS rasaadj
+ALTER_TRANS %RASAAD_JOINED%
 BEGIN %rasaad_state30925% END		// state number (can be more than one)
 BEGIN %rasaad_transition30925% END	// transition number (can be more than one)
 BEGIN								// list of changes
 	"REPLY" ~@30925~
 END
-ALTER_TRANS rasaadj
+ALTER_TRANS %RASAAD_JOINED%
 BEGIN %rasaad_state30930% END		// state number (can be more than one)
 BEGIN %rasaad_transition30930% END	// transition number (can be more than one)
 BEGIN								// list of changes
 	"REPLY" ~@30930~
 END
-ALTER_TRANS rasaadj
+ALTER_TRANS %RASAAD_JOINED%
 BEGIN %rasaad_state30935% END		// state number (can be more than one)
 BEGIN %rasaad_transition30935% END	// transition number (can be more than one)
 BEGIN								// list of changes

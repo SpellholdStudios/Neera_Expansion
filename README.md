@@ -47,7 +47,7 @@ Once you've had your first lovetalk with Neera, a flirt menu becomes available v
 
 ## <a name="compat" id="compat"></a>Compatibility
 
-This mod is designed to work on Baldur's Gate: Enhanced Edition (BGEE.
+This mod is designed to work on Baldur's Gate: Enhanced Edition (BGEE) and Enhanced Edition Trilogy (EET).
 
 This is a WeiDU mod, and therefore should be compatible with all WeiDU mods. If you encounter any bugs, please contact <a href="kae@spellholdstudios.net">K'aeloree</a> or alternatively post on the <a href="http://www.shsforums.net/topic/60850-neera-expansion-updated-to-v120/">forums</a><br>
 <div align="right"><a href="#top">Back to top</a></div>
@@ -204,6 +204,14 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 
 
 ## <a name="versions" id="versions"></a>Version History
+
+## 
+
+#### Version 1.3.0 (June 30, 2021)
+
+- Added support for installing the mod on Enhanced Edition Trilogy (EET)
+
+## 
 
 #### Version 1.2.0 (June 22, 2020)
 

@@ -1,5 +1,5 @@
 // Neera dialogue expansion
-APPEND NEERAJ
+APPEND %NEERA_JOINED%
 
 // 1.
 IF ~Global("LK#NeeraTalks","GLOBAL",2)~ n1
@@ -360,8 +360,8 @@ IF ~~ n4.2
   SAY @127
   ++ @128 + n4.4
   ++ @129 + n4.5
-  + ~InParty("Imoen") IsValidForPartyDialogue("Imoen")~ + @130 EXTERN BIMOEN n4.6
-  + ~!InParty("Imoen")~ + @130 + n4.6a
+  + ~InParty("%IMOEN_DV%") IsValidForPartyDialogue("%IMOEN_DV%")~ + @130 EXTERN %IMOEN_BANTER% n4.6
+  + ~!InParty("%IMOEN_DV%")~ + @130 + n4.6a
   ++ @131 + n4.7
 END
 
@@ -383,12 +383,12 @@ END
 
 END
 
-CHAIN BIMOEN n4.6
+CHAIN %IMOEN_BANTER% n4.6
   @136
-  == NEERAJ @137
-EXTERN NEERAJ n4.8
+  == %NEERA_JOINED% @137
+EXTERN %NEERA_JOINED% n4.8
 
-APPEND NEERAJ
+APPEND %NEERA_JOINED%
 
 IF ~~ n4.6a
   SAY @138
