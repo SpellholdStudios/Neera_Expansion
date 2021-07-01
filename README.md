@@ -42,13 +42,15 @@
 
 ## <a name="intro" id="intro"></a>Overview
 
-<img style="float: left;" src="star/readme/images/neeral.jpg"> This mod adds a series of dialogues to the lovely elven wild mage Neera, in an effort to help flesh her out and give the game a little more content for those who've played through it a half-million times. For the romantically inclined, it also adds a number of flirts that you can initiate if you force-talk her.
+<img style="float: left;" src="neera/readme/images/neeral.jpg"> This mod adds a series of dialogues to the lovely elven wild mage Neera, in an effort to help flesh her out and give the game a little more content for those who've played through it a half-million times. For the romantically inclined, it also adds a number of flirts that you can initiate if you force-talk her.
 
 The first talk should begin an hour and a half after you recruit her, and from there on in, talks are spaced at 1.5 hours.
 
 If you haven't had a talk in a while, try sleeping at an inn or outdoors.
 
 The last talk has the words, "*It's a little exciting, isn't it?*" in the first line. Once you've seen that, you know you've seen all the PC dialogues this mod has to offer.
+
+## 
 
 **Flirts**
 
