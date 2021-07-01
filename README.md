@@ -1,4 +1,5 @@
 ![Latest Release](https://img.shields.io/github/v/release/SpellholdStudios/Neera_Expansion?include_prereleases&color=darkred)<a name="top" id="top"> </a>
+![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/SpellholdStudios/Neera_Expansion?color=gold)
 ![Platform](https://img.shields.io/static/v1?label=platform&message=windows%20%7C%20Mac%20%7C%20linux&color=informational)
 ![Language](https://img.shields.io/static/v1?label=language&message=English%20%7C%20Russian&color=limegreen)
 
@@ -6,7 +7,7 @@
 
 <h3>A Spellhold Studios mod for Baldur's Gate:Enhanced Edition<h3>
 
-</div><br />
+</div><br>
 
 
 **Author:** K'aeloree  
@@ -167,7 +168,7 @@ One of the most-requested tweaks is to make Neera and Rasaad same-sex romanceabl
 #### Special Acknowledgements to:
 
 - <a href="http://www.spellholdstudios.net/">Spellhold Studios</a> team for hosting the mod (<a href="http://www.shsforums.net">Forums</a>).
-- Austin: Russian translation and traification..
+- Austin: Russian translation and traification.
 - Everyone else from the <a href="http://www.shsforums.net/">Spellhold Studios</a> and BG:EE forums for testing and giving feedback!.
 
 If you wish to translate the mod, have a suggestion, or should encounter any bugs, please report them to the maintainers at the <a href="http://www.shsforums.net/topic/60850-neera-expansion-updated-to-v120/">mod forum</a>.</br>
@@ -204,8 +205,6 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 
 
 ## <a name="versions" id="versions"></a>Version History
-
-## 
 
 #### Version 1.3.0 (June 30, 2021)
 
