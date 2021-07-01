@@ -1,36 +1,48 @@
 ![Latest Release](https://img.shields.io/github/v/release/SpellholdStudios/Neera_Expansion?include_prereleases&color=darkred)<a name="top" id="top"> </a>
 ![GitHub (Pre-)Release Date](https://img.shields.io/github/release-date-pre/SpellholdStudios/Neera_Expansion?color=gold)
-![Platform](https://img.shields.io/static/v1?label=platform&message=windows%20%7C%20Mac%20%7C%20linux&color=informational)
+![Platform](https://img.shields.io/static/v1?label=platform&message=windows%20%7C%20macOS%20%7C%20linux%20%7C%20Project%20Infinity&color=informational)
 ![Language](https://img.shields.io/static/v1?label=language&message=English%20%7C%20Russian&color=limegreen)
+
+![Supported games](https://img.shields.io/static/v1?label=supported%20games&message=BG%3AEE%20%7C%20EET&color=dodgerblue)
+
 
 <div align="center"><h1>Neera Expansion</h1>
 
-<h3>A Spellhold Studios mod for Baldur's Gate:Enhanced Edition<h3>
+<h3>A Spellhold Studios mod for Baldur's Gate:Enhanced Edition and EET<h3>
 
 </div><br>
 
-
 **Author:** K'aeloree  
 **Mod Website:** <a href="http://www.spellholdstudios.net/ie/neera">Spellhold Studios</a>  
-**Mod Forum:** <a href="http://www.shsforums.net/topic/60850-neera-expansion-updated-to-v120/">IEP Expanded Banters</a>
+**Mod Forum:** <a href="http://www.shsforums.net/forum/636-neera-expansion-ee">IEP Expanded Banters</a>
 
+## 
 
-[Read the mod's readme](https://spellholdstudios.github.io/readmes/neera-expansion-readme-english.html)
+[![Created Badge](https://badges.pufler.dev/created/SpellholdStudios/Neera_Expansion?style=plastic)](https://badges.pufler.dev)
+![GitHub repo size](https://img.shields.io/github/repo-size/SpellholdStudios/Neera_Expansion?style=plastic)
+[![Visits Badge](https://badges.pufler.dev/visits/SpellholdStudios/Neera_Expansion?color=cyan&style=plastic)](https://badges.pufler.dev) 
+![Maintenance](https://img.shields.io/static/v1?label=maintained%3F&message=yes&color=greenlight&style=plastic)
+![GitHub contributors](https://img.shields.io/github/contributors/SpellholdStudios/Neera_Expansion?color=blueviolet&style=plastic) [![Contributors Display](https://badges.pufler.dev/contributors/SpellholdStudios/Neera_Expansion?size=30&padding=5&bots=true)](https://badges.pufler.dev)
 
-[Download the mod at Spellhold Studios](http://www.shsforums.net/files/file/1022-neera-expansion/)<br>
+## 
 
-&nbsp;
+:page_facing_up: [Read the mod's readme](https://spellholdstudios.github.io/readmes/neera-expansion-readme-english.html)
+
+:inbox_tray: [Download the mod at Spellhold Studios](http://www.shsforums.net/files/file/1022-neera-expansion/)<br>
+
+## 
 
 <div align="center">
 <a href="#intro">Overview</a> &#8226; <a href="#compat">Compatibility</a> &#8226; <a href="#installation">Installation</a> &#8226; <a href="#components">Components</a> &#8226; <a href="#credits">Credits and Acknowledgements</a> &#8226; <a href="#versions">Version History</a></br>
 </div>
+
 
 <hr>
 
 
 ## <a name="intro" id="intro"></a>Overview
 
-This mod adds a series of dialogues to the lovely elven wild mage Neera, in an effort to help flesh her out and give the game a little more content for those who've played through it a half-million times. For the romantically inclined, it also adds a number of flirts that you can initiate if you force-talk her.
+<img style="float: left;" src="star/readme/images/neeral.jpg"> This mod adds a series of dialogues to the lovely elven wild mage Neera, in an effort to help flesh her out and give the game a little more content for those who've played through it a half-million times. For the romantically inclined, it also adds a number of flirts that you can initiate if you force-talk her.
 
 The first talk should begin an hour and a half after you recruit her, and from there on in, talks are spaced at 1.5 hours.
 
@@ -41,6 +53,7 @@ The last talk has the words, "*It's a little exciting, isn't it?*" in the first 
 **Flirts**
 
 Once you've had your first lovetalk with Neera, a flirt menu becomes available via force-talk. An additional number of flirts become available after you've completed the BG:EE portion of her romance as well.
+<div align="right"><a href="#top">Back to top</a></div>
 
 
 <hr>
@@ -48,9 +61,26 @@ Once you've had your first lovetalk with Neera, a flirt menu becomes available v
 
 ## <a name="compat" id="compat"></a>Compatibility
 
-This mod is designed to work on Baldur's Gate: Enhanced Edition (BGEE) and Enhanced Edition Trilogy (EET).
+#### Games supported
 
-This is a WeiDU mod, and therefore should be compatible with all WeiDU mods. If you encounter any bugs, please contact <a href="kae@spellholdstudios.net">K'aeloree</a> or alternatively post on the <a href="http://www.shsforums.net/topic/60850-neera-expansion-updated-to-v120/">forums</a><br>
+This mod is designed to work on Baldur's Gate: Enhanced Edition (BGEE) and <a href="https://github.com/Gibberlings3/EET/releases">Enhanced Edition Trilogy (EET)</a>.
+
+&#9755; This version contains content for BG only, so while Neera will be functional in a SoD game, she will not speak to you.
+
+## 
+
+#### Other Mods Compatibility
+
+This is a WeiDU mod, and therefore should be compatible with all WeiDU mods. If you encounter any bugs, please <a href="http://www.shsforums.net/forum/636-neera-expansion-ee">report them on the forum!</a><br>
+<div align="right"><a href="#top">Back to top</a></div>
+
+## 
+
+#### Installation Order
+
+Here is the recommended installation order:
+- Please install Neera Expansion after EET.
+- Please install Neera Expansion before EET_End, and any final "biffing" routines.
 <div align="right"><a href="#top">Back to top</a></div>
 
 
@@ -66,6 +96,12 @@ This is a WeiDU mod, and therefore should be compatible with all WeiDU mods. If 
 *When installing or un-installing, **do not close the DOS window** by clicking on the **X** button! Instead, press the **Enter** key whenever instructed to do so.*
 
 *__Disable any antivirus__ or other memory-resident software before installing this or any other mod. Some (particularly avast and Norton!) have a tendency to report false positives with mod activity, resulting in failed installs.*
+
+## 
+
+#### Special Note for Siege of Dragonspear from Steam/GOG
+
+Good Old Games (GOG) and Steam both package the additional content for Siege of Dragonspear in a method that <acronym title="Weimer Dialogue Utility">WeiDU</acronym>, the tool used to install this mod, cannot access. You must run a program called <a href="https://github.com/Argent77/A7-DlcMerger/releases/latest">DLC Merger</a> on your SoD installation before you can install this or any other <acronym title="Weimer Dialogue Utility">WeiDU</acronym>-based mod.
 
 ## 
 
@@ -85,9 +121,9 @@ Run **`setup-neera.exe`** in your game folder to reinstall, un-install or otherw
 
 ## 
 
-#### Mac OS X
+#### Mac OS
 
-Neera Expansion for Mac OS X is distributed is distributed in the same compressed archive and includes a WeiDU installer.
+Neera Expansion for Mac OS is distributed is distributed in the same compressed archive and includes a WeiDU installer.
 
 First, extract the files from the archive into your game directory. On successful extraction, there should be a :file_folder: neera folder, setup-neera and setup-neera.command files in your game folder. To install, simply double-click **`setup-neera.command`** and follow the instructions on screen.
 
@@ -101,7 +137,7 @@ Neera Expansion for Linux is distributed in the same compressed archive and does
 
 Extract the contents of the mod to the folder of the game you wish to modify.
 
-Download the latest version of WeiDU for Linux from <a href="https://github.com/WeiDUorg/weidu/releases">WeiDU.org</a> and copy weidu and weinstall to /usr/bin. Following that, open a terminal, **cd** to your game installation directory, run tolower and answer 'Y' to both queries. You can avoid running the second option (linux.ini) if you've already ran it once in the same directory. To save time, the archive is already tolowered, so there's no need to run the first option (lowercasing file names) either if you've extracted only this mod since the last time you lowercased file names. If you're unsure, running tolower and choosing both options is the safe bet.
+Download the latest version of WeiDU for Linux from <a href="https://github.com/WeiDUorg/weidu/releases">WeiDU.org</a> and copy weidu and weinstall to `/usr/bin`. Following that, open a terminal, **cd** to your game installation directory, run tolower and answer 'Y' to both queries. You can avoid running the second option (linux.ini) if you've already ran it once in the same directory. To save time, the archive is already tolowered, so there's no need to run the first option (lowercasing file names) either if you've extracted only this mod since the last time you lowercased file names. If you're unsure, running tolower and choosing both options is the safe bet.
 
 To install, run **`weinstall setup-neera`** in your game folder. Then run **`wine Baldur.exe`** and start playing.
 
@@ -109,7 +145,7 @@ To install, run **`weinstall setup-neera`** in your game folder. Then run **`win
 
 #### Note for Complete Un-installation
 
-In addition to the methods above for removing individual components, you can completely un-install the mod using **`setup-rupert --uninstall`** at the command line to remove all components without wading through prompts.</br>
+In addition to the methods above for removing individual components, you can completely un-install the mod using **`setup-neera --uninstall`** at the command line to remove all components without wading through prompts.</br>
 <div align="right"><a href="#top">Back to top</a></div>
 
 
@@ -118,7 +154,7 @@ In addition to the methods above for removing individual components, you can com
 
 ## <a name="components" id="components"></a>Components
 
-The installer includes the following components. The number of each is the component *DESIGNATED* number which gives it a fixed install position and allows automated installers to specify component choices.
+The installer includes the following components. All optional components require the main component to be installed.
 
 ## 
 
@@ -127,6 +163,8 @@ The installer includes the following components. The number of each is the compo
 ## 
 
 **[0] Neera Expansion** (Main component)  
+
+&#10173; This is the main component.
 
 ## 
 
@@ -137,13 +175,18 @@ The installer includes the following components. The number of each is the compo
 **4. 1.5 hours** (default)  
 **5. 2 hours**  
 
-This component defines talks intervals frequency.
+&#10173; This component defines talks intervals frequency.
 
 ## 
 
 ### BG:EE Game romance tweaks group
 
 One of the most-requested tweaks is to make Neera and Rasaad same-sex romanceable, so with Jalily's help I created two components to do so. Their dialogue will be appropriately altered to suit either gender, and the romance should begin as normal. There are two components:
+
+
+**Portraits for non-joinable NPCs**
+
+&#10173; This optional component installs custom portraits for various non-joinable NPCs added by this mod.
 
 ## 
 
@@ -161,7 +204,7 @@ One of the most-requested tweaks is to make Neera and Rasaad same-sex romanceabl
 
 ## <a name="credits" id="credits"></a>Credits and Acknowledgements
 
-**Author:** <a href="http://www.shsforums.net/user/3481-kaeloree/">K'aeloree</a>  
+**Author:** <a href="http://www.shsforums.net/user/3481-kaeloree">K'aeloree</a>  
 
 ## 
 
@@ -169,9 +212,10 @@ One of the most-requested tweaks is to make Neera and Rasaad same-sex romanceabl
 
 - <a href="http://www.spellholdstudios.net/">Spellhold Studios</a> team for hosting the mod (<a href="http://www.shsforums.net">Forums</a>).
 - Austin: Russian translation and traification.
+- K4thos for providing EET compatibility.
 - Everyone else from the <a href="http://www.shsforums.net/">Spellhold Studios</a> and BG:EE forums for testing and giving feedback!.
 
-If you wish to translate the mod, have a suggestion, or should encounter any bugs, please report them to the maintainers at the <a href="http://www.shsforums.net/topic/60850-neera-expansion-updated-to-v120/">mod forum</a>.</br>
+If you wish to translate the mod, have a suggestion, or should encounter any bugs, please report them to the maintainers at the <a href="http://www.shsforums.net/forum/636-neera-expansion-ee">mod forum</a>.</br>
 
 ## 
 
@@ -206,13 +250,16 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 
 ## <a name="versions" id="versions"></a>Version History
 
-#### Version 1.3.0 (June 30, 2021)
+#### Version 1.3.0 &nbsp;(June 30, 2021)
 
-- Added support for installing the mod on Enhanced Edition Trilogy (EET)
+- Added Dynamic Install Syntax and global `LABELS` to support AL|EN's "Project Infinity".
+- Added native EET compatibility (thanks K4thos).
+- Reformated readme file.
+- Updated WeiDU installer to v247.
 
 ## 
 
-#### Version 1.2.0 (June 22, 2020)
+#### Version 1.2.0 &nbsp;(June 22, 2020)
 
 - Added *neera.ini* metadata file to support AL|EN's "Project Infinity".
 - Replaced `AUTHOR` keyword with `SUPPORT`.
@@ -223,21 +270,21 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 - Added Russian translation (Thanks Austin).
 - Traified mod.
 - Fixed typos in English .tra files.
-- Updated and renamed readme file to *neera-expansion-readme-english.html*, then moved it into new "*readme*" folder.
+- Updated and renamed readme file to *neera-expansion-readme-english.html*, then moved it into new :file_folder: "*readme*" folder.
 - Reorganized mod architecture tree: created or renamed folders to sort files according to their types.
-- Included Linux and Mac Os X versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).
+- Included Linux and Mac OS versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).
 - Updated WeiDU installer to v246.
 - Uploaded mod to official Spellhold Studios GitHub mirror account.
 
 ## 
 
-#### Version 1.1 (November 14, 2013)
+#### Version 1.1 &nbsp;(November 14, 2013)
 
 - Now with simpler, properly compatible installation!
 
 ## 
 
-#### Version 1.0 (January 4, 2013)
+#### Version 1.0 &nbsp;(January 4, 2013)
 
 - Initial release.
 <div align="right"><a href="#top">Back to top</a></div>
