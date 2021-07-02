@@ -256,7 +256,7 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 
 - Added Dynamic Install Syntax and global `LABELS` to support AL|EN's "Project Infinity".
 - Added native EET compatibility (thanks K4thos).
-- Reformated readme file.
+- Reformatted readme file.
 - Updated WeiDU installer to v247.
 
 ## 
