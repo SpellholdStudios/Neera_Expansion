@@ -60,7 +60,7 @@ REQUIRE_COMPONENT ~neera.tp2~ ~0~ @10   // ~You need the Neera Expansion install
 SUBCOMPONENT @4                         // ~How much time would you like between talks (approximately)?~
 GROUP @1                                // ~Neera Expansion content~
 
-COPY_EXISTING ~gtimes.ids~ ~gtimes.ids~
+COPY_EXISTING ~gtimes.ids~ ~override~
 	REPLACE_TEXTUALLY ~5400 LK#NEERA_TIMER~ ~900 LK#NEERA_TIMER~
 
 BEGIN @6                                // ~30 minutes~
@@ -69,7 +69,7 @@ REQUIRE_COMPONENT ~neera.tp2~ ~0~ @10   // ~You need the Neera Expansion install
 SUBCOMPONENT @4                         // ~How much time would you like between talks (approximately)?~
 GROUP @1                                // ~Neera Expansion content~
 
-COPY_EXISTING ~gtimes.ids~ ~gtimes.ids~
+COPY_EXISTING ~gtimes.ids~ ~override~
 	REPLACE_TEXTUALLY ~5400 LK#NEERA_TIMER~ ~1800 LK#NEERA_TIMER~
 
 BEGIN @7                                // ~1 hour~
@@ -78,7 +78,7 @@ REQUIRE_COMPONENT ~neera.tp2~ ~0~ @10   // ~You need the Neera Expansion install
 SUBCOMPONENT @4                         // ~How much time would you like between talks (approximately)?~
 GROUP @1                                // ~Neera Expansion content~
 
-COPY_EXISTING ~gtimes.ids~ ~gtimes.ids~
+COPY_EXISTING ~gtimes.ids~ ~override~
 	REPLACE_TEXTUALLY ~5400 LK#NEERA_TIMER~ ~3600 LK#NEERA_TIMER~
   
 BEGIN @8                                // ~1.5 hours (default)~
@@ -93,7 +93,7 @@ REQUIRE_COMPONENT ~neera.tp2~ ~0~ @10   // ~You need the Neera Expansion install
 SUBCOMPONENT @4                         // ~How much time would you like between talks (approximately)?~
 GROUP @1                                // ~Neera Expansion content~
 
-COPY_EXISTING ~gtimes.ids~ ~gtimes.ids~
+COPY_EXISTING ~gtimes.ids~ ~override~
 	REPLACE_TEXTUALLY ~5400 LK#NEERA_TIMER~ ~7200 LK#NEERA_TIMER~
   
 
