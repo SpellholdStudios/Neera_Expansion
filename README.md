@@ -123,9 +123,9 @@ Run **`setup-neera.exe`** in your game folder to reinstall, un-install or otherw
 
 ## 
 
-#### Mac OS
+#### macOS
 
-Neera Expansion for Mac OS is distributed is distributed in the same compressed archive and includes a WeiDU installer.
+Neera Expansion for macOS is distributed is distributed in the same compressed archive and includes a WeiDU installer.
 
 First, extract the files from the archive into your game directory. On successful extraction, there should be a :file_folder: neera folder, setup-neera and setup-neera.command files in your game folder. To install, simply double-click **`setup-neera.command`** and follow the instructions on screen.
 
@@ -252,7 +252,13 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 
 ## <a name="versions" id="versions"></a>Version History
 
-#### Version 1.3.0 &nbsp;(June 30, 2021)
+#### Version v1.3.1 &nbsp;(April 5, 2023)
+
+- Fix the Neera timer components
+
+##
+
+#### Version v1.3.0 &nbsp;(June 30, 2021)
 
 - Added Dynamic Install Syntax and global `LABELS` to support AL|EN's "Project Infinity".
 - Added native EET compatibility (thanks K4thos).
@@ -261,7 +267,7 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 
 ## 
 
-#### Version 1.2.0 &nbsp;(June 22, 2020)
+#### Version v1.2.0 &nbsp;(June 22, 2020)
 
 - Added *neera.ini* metadata file to support AL|EN's "Project Infinity".
 - Replaced `AUTHOR` keyword with `SUPPORT`.
@@ -274,7 +280,7 @@ If you wish to translate the mod, have a suggestion, or should encounter any bug
 - Fixed typos in English .tra files.
 - Updated and renamed readme file to *neera-expansion-readme-english.html*, then moved it into new :file_folder: "*readme*" folder.
 - Reorganized mod architecture tree: created or renamed folders to sort files according to their types.
-- Included Linux and Mac OS versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).
+- Included Linux and macOS versions in the same package (thanks AL|EN's Infinity Auto Packager tool!).
 - Updated WeiDU installer to v246.
 - Uploaded mod to official Spellhold Studios GitHub mirror account.
 
