@@ -1,2 +1,1 @@
-- Make the mod EET compatible (replace vanilla strref used in .d files with variables: nnnnn + 200000) : DONE as of v1.3.0 (thanks K4thos!)
 - Check SoD compatibility.
