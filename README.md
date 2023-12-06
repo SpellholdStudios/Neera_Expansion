@@ -42,11 +42,11 @@
 
 ## <a name="intro" id="intro"></a>Overview
 
-<img style="float: left;" src="neera/readme/images/neeral.jpg"> This mod adds a series of dialogues to the lovely elven wild mage Neera, in an effort to help flesh her out and give the game a little more content for those who've played through it a half-million times. For the romantically inclined, it also adds a number of flirts that you can initiate if you force-talk her.
+<img style="float: left;" src="neera/readme/images/neeral.jpg"> This mod adds a series of dialogues to the lovely elven wild mage Neera, to help flesh her out and give the game a little more content for those who've played through it a half-million times. For the romantically inclined, it also adds several flirts that you can initiate if you force-talk her.
 
 The first talk should begin an hour and a half after you recruit her, and from there on in, talks are spaced at 1.5 hours.
 
-If you haven't had a talk in a while, try sleeping at an inn or outdoors.
+If you haven't talked in a while, try sleeping at an inn or outdoors.
 
 The last talk has the words, "*It's a little exciting, isn't it?*" in the first line. Once you've seen that, you know you've seen all the PC dialogues this mod has to offer.
 
@@ -73,7 +73,7 @@ This mod is designed to work on Baldur's Gate: Enhanced Edition (BGEE) and <a hr
 
 #### Other Mods Compatibility
 
-This is a WeiDU mod, and therefore should be compatible with all WeiDU mods. If you encounter any bugs, please <a href="http://www.shsforums.net/forum/636-neera-expansion-ee">report them on the forum!</a><br>
+This is a WeiDU mod and therefore should be compatible with all WeiDU mods. If you encounter any bugs, please <a href="http://www.shsforums.net/forum/636-neera-expansion-ee">report them on the forum!</a><br>
 <div align="right"><a href="#top">Back to top</a></div>
 
 ## 
@@ -95,9 +95,9 @@ Here is the recommended installation order:
 
 *If you've previously installed the mod, remove it before extracting the new version. To do this, run **`setup-neera.exe`**, un-install all previously installed main component and delete the :file_folder: **neera** folder.*
 
-*When installing or un-installing, **do not close the DOS window** by clicking on the **X** button! Instead, press the **Enter** key whenever instructed to do so.*
+*When installing or uninstalling, **do not close the DOS window** by clicking on the **X** button! Instead, press the **Enter** key whenever instructed to do so.*
 
-*__Disable any antivirus__ or other memory-resident software before installing this or any other mod. Some (particularly avast and Norton!) have a tendency to report false positives with mod activity, resulting in failed installs.*
+*__Disable any antivirus__ or other memory-resident software before installing this or any other mod. Some (particularly Avast and Norton!) have a tendency to report false positives with mod activity, resulting in failed installs.*
 
 ## 
 
@@ -109,7 +109,7 @@ Good Old Games (GOG) and Steam both package the additional content for Siege of 
 
 #### Enhanced Editions Note
 
-The Enhanced Editions are actively supported games. Please note that every patch update will wipe your current mod setup! If in the middle of a modded game you might want to delay the patch update (if possible) as even after reinstalling the mods, you might not be able to continue with your old savegames. Alternatively, copy the whole game's folder into a new one that can be modded and will stay untouched by game patches. It is important that you install the mod to the language version you are playing the game in. Otherwise, the dialogues of the mod will not show but give error messages.
+The Enhanced Editions are actively supported games. Please note that every patch update will wipe your current mod setup! If in the middle of a modded game you might want to delay the patch update (if possible) as even after reinstalling the mods, you might not be able to continue with your old savegames. Alternatively, copy the whole game's folder into a new one that can be modded and will stay untouched by game patches. You must install the mod to the language version you are playing the game in. Otherwise, the dialogues of the mod will not show but give error messages.
 
 ## 
 
@@ -119,13 +119,13 @@ Neera Expansion for Windows is distributed as an extractable compressed archive 
 
 Extract the contents of the mod archive into the folder of the game you wish to modify (*the folder which contains the "CHITIN.KEY" file*), using <a href="http://www.7-zip.org/download.html">7zip</a>, <a href="http://www.rarlab.com/download.htm">WinRAR</a>, or another file compression utility that handles .zip files. On successful extraction, there should be a :file_folder: neera folder and a setup-neera.exe file in your game folder. To install, simply double-click **`setup-neera.exe`** and follow the instructions on screen.
 
-Run **`setup-neera.exe`** in your game folder to reinstall, un-install or otherwise change the components settings.
+Run **`setup-neera.exe`** in your game folder to reinstall, uninstall or otherwise change the components settings.
 
 ## 
 
 #### macOS
 
-Neera Expansion for macOS is distributed is distributed in the same compressed archive and includes a WeiDU installer.
+Neera Expansion for macOS is distributed in the same compressed archive and includes a WeiDU installer.
 
 First, extract the files from the archive into your game directory. On successful extraction, there should be a :file_folder: neera folder, setup-neera and setup-neera.command files in your game folder. To install, simply double-click **`setup-neera.command`** and follow the instructions on screen.
 
